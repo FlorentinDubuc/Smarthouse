@@ -12,17 +12,19 @@ echo '
 <body>
 <section class="header">
     <div class="logo"></div>
-    <section>
     <div class="material_icon"></div>
     <div class="account"></div>
-    </section>
-</section>
-<section class="nav-bar">
-        <a class="item1" href="../php/index.php">Home</a>
-        <a class="item2" href="../php/consumption.php">Consumption</a>
-        <a class="item3" href="../php/media_controller.php">Media controller</a>
-        <a class="item4" href="../php/network_traffic.php">Network traffic</a>
-        <a class="item5" href="../php/rooms.php">Rooms</a>
-        <a class="item6" href="../php/admin_panel.php">Admin panel</a>
+    <div class="nav-bar">
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="bar">
+                <li><a class="nav-item" href="../php/index.php">Home</a></li>
+                <li><a class="nav-item" href="../php/consumption.php">Consumption</a></li>
+                <li><a class="nav-item" href="../php/media_controller.php">Media controller</a></li>
+                <li><a class="nav-item" href="../php/network_traffic.php">Network traffic</a></li>
+                <li><a class="nav-item" href="../php/rooms.php">Rooms</a></li>
+                <li><a class="nav-item" href="../php/admin_panel.php">Admin panel</a></li>
+        </ul>
+    </div>
 </section>
 ';

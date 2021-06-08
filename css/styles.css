@@ -1,51 +1,168 @@
-body{
+body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
     background-color: #eeeeee;
 }
 
-.content{
+.nav-bar, ul.bar{
+    background: #00838e;
+}
+
+a {
+    color: #fff;
+    padding: 5px 5px 15px 5px;
+    border-top: 1px solid #fff;
+}
+
+/* header */
+
+.header {
+    width: 100%;
+    background: #00838e;
+}
+
+.nav-bar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+.nav-bar li a {
+    display: block;
+    text-decoration: none;
+}
+
+.nav-bar .logo {
+    display: block;
+    float: left;
+    font-size: 2em;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+/* menu */
+
+.nav-bar .bar {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+
+.nav-bar .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+}
+
+.nav-bar .menu-icon .navicon {
+    background: #fff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+}
+
+.nav-bar .menu-icon .navicon:before,
+.nav-bar .menu-icon .navicon:after {
+    background: #fff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+.nav-bar .menu-icon .navicon:before {
+    top: 5px;
+}
+
+.nav-bar .menu-icon .navicon:after {
+    top: -5px;
+}
+
+/* menu btn */
+
+.nav-bar .menu-btn {
+    display: none;
+}
+
+.nav-bar .menu-btn:checked ~ .bar {
+    background-color: #4fb3be;
+    max-height: 252px;
+    left: auto;
+}
+
+.nav-bar .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+}
+
+.nav-bar .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+}
+
+.nav-bar .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+}
+
+.nav-bar .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.nav-bar .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+}
+
+.div-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.div-form {
     display: flex;
     justify-content: center;
 }
 
-.form{
-    display: flex;
-    flex-direction: column;
+.form {
     margin-top: 10px;
-    width: 300px;
+    width: 80%;
     padding: 8% 5%;
     background-color: #e0e0e0;
-    border: 2px solid #000;
+    border: 1px solid #000;
 }
 
-.form input[type="text"], .form input[type="password"]{
+.form input[type="text"], .form input[type="password"] {
     background: none;
     display: block;
     margin: 20px auto;
     text-align: center;
     border: 2px solid #00838e;
     padding: 14px 10px;
-    width: 200px;
+    width: 1fr;
     outline: none;
     border-radius: 24px;
     transition: 0.25s;
 }
 
-.form input[type="text"]:focus, .form input[type="password"]:focus{
-    width: 280px;
+.form input[type="text"]:focus, .form input[type="password"]:focus {
+    width: 80%;
     border-color: #4fb3be;
 }
 
-.form input[type="submit"]{
+.form input[type="submit"] {
     background: none;
     display: block;
     margin: 20px auto;
     text-align: center;
     border: 2px solid #00838e;
     padding: 14px 40px;
-    width: 200px;
+    width: 1fr;
     outline: none;
     border-radius: 24px;
     transition: 0.25s;
@@ -56,15 +173,37 @@ body{
     background: #00838e;
 }
 
-.nav-bar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    background: #00838e;
+@media (min-width: 858px) {
+    a {
+        border-top: 0;
+    }
+    .header {
+        display: flex;
+        justify-content: center;
+    }
+    .nav-bar li a:hover,
+    .nav-bar .menu-btn:hover {
+        background-color: #4fb3be;
+        border-right: 1px solid #fff;
+        border-left: 1px solid #fff;
+    }
+    .nav-bar li {
+        float: left;
+    }
+    .nav-bar li a {
+        padding: 20px 30px;
+    }
+    .nav-bar .bar {
+        clear: none;
+        max-height: none;
+    }
+    .nav-bar .menu-icon {
+        display: none;
+    }
 }
 
-a{
-    color: white;
-    text-decoration: none;
-    padding: 30px 10px;
+@media (min-width: 425px) {
+    .form {
+        width: 300px;
+    }
 }

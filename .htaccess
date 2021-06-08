@@ -1,0 +1,5 @@
+
+
+#Custom error pages
+ErrorDocument 403 /Smarthouse/php/403.php
+ErrorDocument 404 /Smarthouse/php/404.php
